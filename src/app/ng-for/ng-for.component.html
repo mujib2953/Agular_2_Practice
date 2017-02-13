@@ -1,4 +1,8 @@
 <div>
     <code>[ngFor]</code>
     <br />
+
+    <div *ngFor="let data of runs; let i = index;">
+        at {{ i + 1 }}  ball {{ data }} runs scored.
+    </div>
 </div>
