@@ -13,6 +13,9 @@ import { PluralPipeComponent } from './plural-pipe/plural-pipe.component';
 import { SelectPipeComponent } from './select-pipe/select-pipe.component';
 import { JsonPipeComponent } from './json-pipe/json-pipe.component';
 import { LocationComponent } from './location/location.component';
+import { LowercasePipeComponent } from './lowercase-pipe/lowercase-pipe.component';
+import { NgClassComponent } from './ng-class/ng-class.component';
+import { NgForComponent } from './ng-for/ng-for.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { LocationComponent } from './location/location.component';
     PluralPipeComponent,
     SelectPipeComponent,
     JsonPipeComponent,
-    LocationComponent
+    LocationComponent,
+    LowercasePipeComponent,
+    NgClassComponent,
+    NgForComponent
   ],
   imports: [
     BrowserModule,
