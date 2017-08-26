@@ -1,0 +1,19 @@
+.customFooter {
+    position: absolute;
+    bottom: 0px;
+    height: 35px;
+    width: 100%;
+    background: #FFF;
+    text-align: center;
+    font-family: monospace;
+}
+
+.red {
+    color: #F00;
+}
+.blue {
+    color: navy;
+}
+.bold {
+    font-weight: bold;
+}
