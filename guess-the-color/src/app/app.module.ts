@@ -7,7 +7,6 @@ import { DevelopeFooterComponent } from './develope-footer/develope-footer.compo
 
 import { MyCustomService } from './my-custom.service';
 import { GameAreaComponent } from './game-area/game-area.component';
-import { ColorComponent } from './color/color.component';
 import { CirclesComponent } from './circles/circles.component';
 
 @NgModule({
@@ -16,7 +15,6 @@ import { CirclesComponent } from './circles/circles.component';
 	GameBoardComponent,
 	DevelopeFooterComponent,
 	GameAreaComponent,
-	ColorComponent,
 	CirclesComponent
 ],
 imports: [

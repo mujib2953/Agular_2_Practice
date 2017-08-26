@@ -3,14 +3,19 @@
     display: flex;
 }
 .vBlock {
-    height: 100%;
+    height: calc(100% - 10px );
     display: inline-block;
     width: 33.3%;
-
+    padding: 5px;
     border-right: 1px solid #000;
 }
 .note {
-    padding: 5px;
     font-size: 13px;
     font-family: cursive;
+}
+.info {
+    margin: 5px 0px;
+    text-align: center;
+    font-size: 15px;
+    color: navy;
 }
