@@ -19,3 +19,35 @@
     font-size: 15px;
     color: navy;
 }
+.inline {
+    display: inline-block;
+}
+.topBar {
+    display: flex;
+    border: 1px solid #777;
+    margin-bottom: 5px;
+}
+.mDiv {
+    width: 20%;
+    text-align: center;
+}
+.row {
+    display: flex;
+    border: 1px solid #777;
+    margin-bottom: 7px;
+}
+.mDivS {
+    width: 20%;
+    text-align: center;
+    border-right: 1px solid; 
+}
+.circleDiv {
+    background: red;
+    height: 15px;
+    width: 15px;
+    margin: 2px 0px 2px 7px;
+    border-radius: 50%;
+}
+.disable {
+    opacity: 0.5;
+}
