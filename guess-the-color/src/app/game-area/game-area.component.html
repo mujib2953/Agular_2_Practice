@@ -23,10 +23,12 @@
 			<div class="inline mDiv">4</div>
 		</div>
 
-		<div [ngClass]="{'row': true, 'disable': data != nActiveRound }" *ngFor="let data of aRound">
-			<div class="inline mDivS">{{ data }}</div>
+		<div [ngClass]="{'row': true, 'disable': data.nRoundNum != nActiveRound }" *ngFor="let data of aRound">
+			
+			<div class="inline mDivS">{{ data.nRoundNum }}</div>
+			
 			<div class="inline mDivS">
-				<div class="circleDiv"></div>
+				<div class="circleDiv {{ data.userSeq[ 0 ] }}"></div>
 			</div>
 			<div class="inline mDivS">
 				<div class="circleDiv"></div>

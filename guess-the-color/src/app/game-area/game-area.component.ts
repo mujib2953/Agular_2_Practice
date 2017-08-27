@@ -15,8 +15,10 @@ export class GameAreaComponent implements OnInit {
 	constructor(
 		myService: MyCustomService
 	) {
-		this.aRound = myService.sharedData.aRoundCount;
+		this.aRound = myService.sharedData.aRoundData;
 		this.nActiveRound = myService.sharedData.nActiveRound;
+
+		myService.generateRoundColor();
 	}
 
 	ngOnInit() {

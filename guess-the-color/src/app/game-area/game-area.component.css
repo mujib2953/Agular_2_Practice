@@ -42,11 +42,12 @@
     border-right: 1px solid; 
 }
 .circleDiv {
-    background: red;
+    /* background: red; */
     height: 15px;
     width: 15px;
     margin: 2px 0px 2px 7px;
     border-radius: 50%;
+    border: 1px solid;
 }
 .disable {
     opacity: 0.5;
