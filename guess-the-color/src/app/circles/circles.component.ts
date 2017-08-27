@@ -9,12 +9,11 @@ export class CirclesComponent implements OnInit {
 
 	@Input() my_class: string;
 
-	constructor() {
+	constructor() {}
+
+	ngOnInit() {}
+
+	circleClicked() {
 		console.log( this.my_class );
-	}
-
-	ngOnInit() {
-		console.log( this.my_class );		
-	}
-
+	};
 }
