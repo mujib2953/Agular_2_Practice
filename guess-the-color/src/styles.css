@@ -3,3 +3,22 @@
 .bold {
     font-weight: bold;
 }
+
+.Red {
+    background: #F00;
+}
+.Green {
+    background: #0F0;
+}
+.Blue {
+    background: #00F;
+}
+.Cyan {
+    background: #0FF;
+}
+.Yellow {
+    background: #FF0;
+}
+.Magenta {
+    background: #F0F;
+}
