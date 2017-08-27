@@ -51,5 +51,20 @@ export class MyCustomService {
 		max = Math.floor(max);
 		return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive 
 	}
+	
+	updateColor( p_color: string ): void {
+		console.log( p_color );
+		
+		if( this.sharedData.aRoundData[ this.sharedData.nActiveRound - 1 ].userSeq[ 0 ] == undefined ) {
+			this.sharedData.aRoundData[ this.sharedData.nActiveRound - 1 ].userSeq[ 0 ] = p_color;
+		} else if( this.sharedData.aRoundData[ this.sharedData.nActiveRound - 1 ].userSeq[ 1 ] == undefined ) {
+			this.sharedData.aRoundData[ this.sharedData.nActiveRound - 1 ].userSeq[ 1 ] = p_color;
+		} else if( this.sharedData.aRoundData[ this.sharedData.nActiveRound - 1 ].userSeq[ 2 ] == undefined ) {
+			this.sharedData.aRoundData[ this.sharedData.nActiveRound - 1 ].userSeq[ 2 ] = p_color;
+		} else if( this.sharedData.aRoundData[ this.sharedData.nActiveRound - 1 ].userSeq[ 3 ] == undefined ) {
+			this.sharedData.aRoundData[ this.sharedData.nActiveRound - 1 ].userSeq[ 3 ] = p_color;
+		}
 
+		console.log( this );
+	}
 }
