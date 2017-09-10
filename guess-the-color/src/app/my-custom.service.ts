@@ -8,6 +8,7 @@ export class MyCustomService {
 			gameTitle: 'Gusse the color',
 		},
 		nActiveRound: 1,
+		nRoundCount: 0,
 		allAvailableColor: [ 'Red', 'Green', 'Blue', 'Cyan', 'Yellow', 'Magenta' ],
 		aRoundData: [
 			{
@@ -22,7 +23,8 @@ export class MyCustomService {
 				userSeq: [],
 				isPassed: false
 			}
-		] 
+		],
+		nScore: 0,
 	};
 
 	constructor() {
@@ -53,7 +55,6 @@ export class MyCustomService {
 	}
 	
 	updateColor( p_color: string ): void {
-		console.log( p_color );
 		
 		if( this.sharedData.aRoundData[ this.sharedData.nActiveRound - 1 ].userSeq[ 0 ] == undefined ) {
 			this.sharedData.aRoundData[ this.sharedData.nActiveRound - 1 ].userSeq[ 0 ] = p_color;
@@ -64,7 +65,66 @@ export class MyCustomService {
 		} else if( this.sharedData.aRoundData[ this.sharedData.nActiveRound - 1 ].userSeq[ 3 ] == undefined ) {
 			this.sharedData.aRoundData[ this.sharedData.nActiveRound - 1 ].userSeq[ 3 ] = p_color;
 		}
+	}
+
+	resetUserSelection(): void {
+		this.sharedData.aRoundData[ this.sharedData.nActiveRound - 1 ].userSeq = [];
+	}
+
+	submitUserSelection(): void {
+
+		this.sharedData.nRoundCount++;
+
+		if( this.sharedData.aRoundData[ this.sharedData.nActiveRound - 1 ].userSeq.length != 4 ) {
+			alert( 'Please guess all 4 colors.' );
+			return;
+		}
+
+		let users: string = JSON.stringify( this.sharedData.aRoundData[ this.sharedData.nActiveRound - 1 ].userSeq );
+		let copms: string = JSON.stringify( this.sharedData.aRoundData[ this.sharedData.nActiveRound - 1 ].aGenSeq );
+
+		if( users === copms ) {
+			console.log( 'Passed' );
+			this.sharedData.aRoundData[ this.sharedData.nActiveRound - 1 ].isPassed = true;
+			this.doGlobalThings();
+			return;
+		} else {
+			console.log( 'Failed' );
+			this.checkEachColor();
+		}
+
+		if( this.sharedData.nRoundCount % 3 == 0 ) {
+			this.doGlobalThings();
+		}
 
 		console.log( this );
+	}
+
+	doGlobalThings(): void {
+
+		// if( this.sharedData.nRoundCount % 3 != 0 ) {
+			this.sharedData.nRoundCount = 0;
+			this.sharedData.nActiveRound++;
+
+			if( this.sharedData.nActiveRound > this.sharedData.aRoundData.length )
+				document.location.reload();
+
+			this.generateRoundColor();
+		// }
+	}
+
+	checkEachColor(): void {
+		
+		let compArr: any = this.sharedData.aRoundData[ this.sharedData.nActiveRound - 1 ].aGenSeq;
+		let userArr: any = this.sharedData.aRoundData[ this.sharedData.nActiveRound - 1 ].userSeq;
+
+		if( compArr[ 0 ] != userArr[ 0 ]  )
+			userArr[ 0 ] = null;
+		if( compArr[ 1 ] != userArr[ 1 ]  )
+			userArr[ 1 ] = null;
+		if( compArr[ 2 ] != userArr[ 2 ]  )
+			userArr[ 2 ] = null;
+		if( compArr[ 3 ] != userArr[ 3 ]  )
+			userArr[ 3 ] = null;
 	}
 }

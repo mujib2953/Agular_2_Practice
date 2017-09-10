@@ -4,6 +4,7 @@
 			<span class="bold">Note:</span> In this game you have to guess the sequence of colors. If you match all the sequence of the color you won the game. <br/>
 			So enjoy. Happy playing !!!
 		</div>
+		<hr />
 		<div class="note info">Availble colors</div>
 		<div class="colorsArea">
 			<app-circles my_class="Red"></app-circles>
@@ -12,6 +13,13 @@
 			<app-circles my_class="Cyan"></app-circles>
 			<app-circles my_class="Yellow"></app-circles>
 			<app-circles my_class="Magenta"></app-circles>
+		</div>
+
+		<hr />
+		<div class="note">
+			<span class="bold">Round #: </span> {{ nActiveRound }} 
+			<br />
+			<span class="bold">Attempt #: </span> {{ nRoundCount }}
 		</div>
 	</div>
 	<div class="expectedArea  vBlock">
@@ -41,6 +49,14 @@
 			</div>
 		</div>
 
+		<div class="buttonContainer">
+			<div class="customBtn inline" (click)="submitSelection()">
+				<span>Submit</span>
+			</div>
+			<div class="customBtn resetBtn inline" (click)="resetSelection()">
+				<span>Reset</span>
+			</div>
+		</div>
 	</div>
 	<div class="outputArea  vBlock"></div>
 </div>
